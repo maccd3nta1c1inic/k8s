@@ -5,23 +5,15 @@ services:
     ports:
       - "3307:3306"
     environment:
-      # MYSQL_USER: keycloak
-      # MYSQL_PASSWORD: password
-      MYSQL_ROOT_PASSWORD: Qwerty.12345
-      # MYSQL_DATABASE: docmaccdbdentaluser,docmaccdbtreatmentplan,docmaccdbbill,docmaccdbdentalchart,docmaccdbmedical,docmaccdbpatient
+      MYSQL_ROOT_PASSWORD: d0cm3yAnn3.dbc0Nn3kTz
     volumes:
-      - C:\Users\Admin\Downloads\docker-compose\dbinit\dbinit.sql:/docker-entrypoint-initdb.d/init.sql
-      - C:\Users\Admin\Downloads\docker-compose\mysqlDB:/var/lib/mysql
-      # - C:\Users\Kenneth\Documents\dumps1:/var/lib/mysql
+      - C:\Users\Admin\MACCDentalClinicSystem\mysqlDB\dbinit\dbinit.sql:/docker-entrypoint-initdb.d/init.sql
+      - C:\Users\Admin\MACCDentalClinicSystem\mysqlDB\dbData:/var/lib/mysql
     command:
-      # - --mysql-native-password=ON
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
-      # - --default-authentication-plugin=caching_sha2_password
       - --explicit_defaults_for_timestamp=1
-      # - --lower-case-table-names=1
       - --max-connections=200
-      # - --session-track-schema=ON
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 10s
@@ -33,25 +25,16 @@ services:
       - "7080:8080"
     image: "quay.io/keycloak/keycloak:25.0.2"
     volumes:
-      - C:\Users\Admin\Projects\DentalWebProject\Backend\k8s_MACC\customLogin:/opt/keycloak/themes
-      # - C:/Users/Kenneth/Projects/DentalWeb/Backend/k8s_MACC/customLogin:/opt/keycloak/themes
+      - C:\Users\Admin\MACCDentalClinicSystem\storage\assets\customLogin:/opt/keycloak/themes
     environment:
       KEYCLOAK_ADMIN: admin
-      KEYCLOAK_ADMIN_PASSWORD: admindocmacc
-      spi-theme-welcome-theme: C:\Users\Admin\Projects\DentalWebProject\Backend\k8s_MACC\customLogin
-      # spi-theme-welcome-theme: C:/Users/Kenneth/Projects/DentalWeb/Backend/k8s_MACC/customLogin
+      KEYCLOAK_ADMIN_PASSWORD: admind0cmacc
+      spi-theme-welcome-theme: C:\Users\Admin\MACCDentalClinicSystem\storage\assets\customLogin
       features: token-exchange
       KC_DB: mysql
-      # KC_DB_URL: "jdbc:mysql://mysqldb:3306/docmaccdbdentaluser"
-      # KC_DB_URL: "jdbc:mysql://mysqldb:3306/docmaccdbdentaluser?useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=UTF-8&connectionCollation=utf8mb4_unicode_ci"
-      # KC_DB_URL: "jdbc:mysql://mysqldb:3306/docmaccdbdentaluser?useInformationSchema=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC"
-      # KC_DB_URL: "jdbc:mysql://mysqldb:3306/docmaccdbdentaluser?useInformationSchema=true&nullCatalogMeansCurrent=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&useSSL=false"
       KC_DB_URL: "jdbc:mysql://mysqldb:3306/docmaccdbdentaluser?useInformationSchema=true&nullCatalogMeansCurrent=true&allowPublicKeyRetrieval=true&useSSL=false"
-      # KC_DB_URL: "jdbc:mysql://mysqldb:3306/docmaccdbdentaluser?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC"
-      # KC_HTTP_MANAGEMENT_PORT: 8080
       KC_DB_USERNAME: docmacc
       KC_DB_PASSWORD: d0cmAccpAssw0rd
-      # KC_HOSTNAME: localhost
       KC_HEALTH_ENABLED: "true"
       KC_METRICS_ENABLED: "true"
     healthcheck:
