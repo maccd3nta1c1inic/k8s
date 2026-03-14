@@ -1,0 +1,16 @@
+/* .card-pf {
+  border-color: var(--pf-global--palette--blue-600);
+}
+
+#kc-login {
+  background-color: var(--pf-global--palette--blue-600);
+}
+
+#kc-login:hover {
+  background-color: var(--pf-global--palette--blue-700);
+} */
+
+:root {
+  --pf-global--primary-color--100: var(--pf-global--palette--blue-600);
+  --pf-global--primary-color--200: var(--pf-global--palette--blue-700);
+}
