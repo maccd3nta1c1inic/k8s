@@ -3,7 +3,7 @@ serviceName: prerequisites-svc
 appLabel: prerequisites
 dbHost: "host.docker.internal"
 dbPort: 3307
-networkHost: "192.168.1.2"
+networkHost: "192.168.0.106"
 profileActive: "desktop-kub-prod"
 applicationName: "PreRequisiteService"
 fileDataLocation: /storage/mount/path/data/Prerequisite
@@ -33,7 +33,7 @@ accessModes: ReadWriteMany
 # Use Docker Desktop specific path formats for 2026
 # Windows example: /run/desktop/mnt/host/c/data
 # macOS example: /Users/yourname/data
-hostPath: /run/desktop/mnt/host/c/storageMACC
+hostPath: /run/desktop/mnt/host/c/Users/Admin/MACCDentalClinicSystem/storage/assets
 reclaimPolicy: Retain
 
 volumeClaimName: persistent-volume-prerequisite-claim

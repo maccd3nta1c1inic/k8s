@@ -3,10 +3,11 @@ serviceLoadBalancerName: cloud-gateway-svc
 appLabel: cloud-gateway
 # dbHost: "host.docker.internal"
 # dbHost: "desktop-80hht36.local"
-dbHost: "docmaccdentalclinic.local"
-# networkHost: "192.168.1.2"
+# dbHost: "docmaccdentalclinic.local"
+dbHost: "192.168.0.106"
+networkHost: "192.168.0.106"
 # networkHost: "desktop-80hht36.local"
-networkHost: "docmaccdentalclinic.local"
+# networkHost: "docmaccdentalclinic.local"
 profileActive: "desktop-kub-prod"
 applicationName: "APIGatewayService"
 
