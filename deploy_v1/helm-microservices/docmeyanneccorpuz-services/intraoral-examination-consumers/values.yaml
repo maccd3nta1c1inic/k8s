@@ -3,7 +3,7 @@ serviceName: intraoral-examination-consumer-svc
 appLabel: intraoral-examination-consumer
 dbHost: "host.docker.internal"
 dbPort: 3307
-profileActive: "desktop-kub-prod"
+profileActive: "macc-prod"
 applicationName: "IntraOralExaminationConsumerService"
 
 replicaCount: 1

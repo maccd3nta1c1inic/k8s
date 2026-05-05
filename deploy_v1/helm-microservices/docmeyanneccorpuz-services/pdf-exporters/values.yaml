@@ -2,7 +2,7 @@ deploymentName: pdf-exporter-app
 serviceName: pdf-exporter-svc
 appLabel: pdf-exporter
 dbHost: "host.docker.internal"
-profileActive: "desktop-kub-prod"
+profileActive: "macc-prod"
 applicationName: "PdfExporterService"
 fileDataLocation: /storage/mount/path/data
 

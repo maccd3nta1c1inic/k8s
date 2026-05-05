@@ -3,7 +3,7 @@ serviceName: patient-profile-svc
 appLabel: patient-profile
 dbHost: "host.docker.internal"
 dbPort: 3307
-profileActive: "desktop-kub-prod"
+profileActive: "macc-prod"
 applicationName: "PatientProfileService"
 fileDataLocation: /storage/mount/path/data/PatientsProfile/images
 

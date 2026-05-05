@@ -4,7 +4,7 @@ appLabel: prerequisites
 dbHost: "host.docker.internal"
 dbPort: 3307
 networkHost: "192.168.0.106"
-profileActive: "desktop-kub-prod"
+profileActive: "macc-prod"
 applicationName: "PreRequisiteService"
 fileDataLocation: /storage/mount/path/data/Prerequisite
 

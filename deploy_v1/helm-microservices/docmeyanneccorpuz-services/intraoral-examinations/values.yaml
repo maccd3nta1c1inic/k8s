@@ -3,7 +3,7 @@ serviceName: intraoral-examination-svc
 appLabel: intraoral-examination
 dbHost: "host.docker.internal"
 dbPort: 3307
-profileActive: "desktop-kub-prod"
+profileActive: "macc-prod"
 applicationName: "IntraOralExaminationService"
 fileDataLocation: /storage/mount/path/data/IntraoralExamination/DefaultTeeth
 

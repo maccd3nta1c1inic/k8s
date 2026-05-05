@@ -3,7 +3,7 @@ serviceName: appointment-svc
 appLabel: appointment
 dbHost: "host.docker.internal"
 dbPort: "3307"
-profileActive: "desktop-kub-prod"
+profileActive: "macc-prod"
 applicationName: "DentalAppointmentService"
 
 replicaCount: 1

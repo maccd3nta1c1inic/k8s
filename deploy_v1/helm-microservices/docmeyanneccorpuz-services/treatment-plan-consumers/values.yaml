@@ -2,7 +2,7 @@ deploymentName: treatment-plan-consumer-app
 serviceName: treatment-plan-consumer-svc
 appLabel: treatment-plan-consumer
 dbHost: "host.docker.internal"
-profileActive: "desktop-kub-prod"
+profileActive: "macc-prod"
 dbPort: 3307
 applicationName: "TreatmentPlanConsumerService"
 

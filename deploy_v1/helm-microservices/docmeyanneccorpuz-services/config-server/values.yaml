@@ -1,7 +1,7 @@
 deploymentName: config-server-app
 serviceName: config-server-svc
 appLabel: config-server
-profileActive: "desktop-kub-prod"
+profileActive: "macc-prod"
 applicationName: "ConfigServerService"
 
 replicaCount: 1

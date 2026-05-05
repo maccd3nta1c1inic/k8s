@@ -3,7 +3,7 @@ serviceName: orthodontic-bill-svc
 appLabel: orthodontic-bill
 dbHost: "host.docker.internal"
 dbPort: 3307
-profileActive: "desktop-kub-prod"
+profileActive: "macc-prod"
 applicationName: "OrthodonticBillService"
 
 replicaCount: 1

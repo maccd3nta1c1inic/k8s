@@ -3,7 +3,7 @@ serviceName: dental-certification-svc
 appLabel: dental-certification
 dbHost: "host.docker.internal"
 dbPort: 3307
-profileActive: "desktop-kub-prod"
+profileActive: "macc-prod"
 applicationName: "DentalCertificateService"
 
 replicaCount: 1

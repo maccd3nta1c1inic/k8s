@@ -3,7 +3,7 @@ serviceName: medical-history-svc
 appLabel: medical-history
 dbHost: "host.docker.internal"
 dbPort: 3307
-profileActive: "desktop-kub-prod"
+profileActive: "macc-prod"
 applicationName: "MedicalHistoryService"
 
 replicaCount: 1

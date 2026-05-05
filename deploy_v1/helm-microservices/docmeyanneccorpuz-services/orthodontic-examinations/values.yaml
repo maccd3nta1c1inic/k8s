@@ -3,7 +3,7 @@ serviceName: orthodontic-examination-svc
 appLabel: orthodontic-examination
 dbHost: "host.docker.internal"
 dbPort: 3307
-profileActive: "desktop-kub-prod"
+profileActive: "macc-prod"
 applicationName: "OrthodonticExaminationService"
 
 replicaCount: 1
