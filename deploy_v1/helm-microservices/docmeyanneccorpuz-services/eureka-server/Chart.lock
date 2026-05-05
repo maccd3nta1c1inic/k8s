@@ -1,0 +1,6 @@
+dependencies:
+- name: docmeyanneccorpuz-common
+  repository: file://../../docmeyanneccorpuz-common
+  version: 0.1.0
+digest: sha256:1afd1594b26ca8dc07873145d3f189973d7ed9e70eb5b5502b87283fe40130ff
+generated: "2025-03-31T02:00:03.9402084+08:00"

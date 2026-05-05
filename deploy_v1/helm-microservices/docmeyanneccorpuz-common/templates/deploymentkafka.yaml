@@ -1,0 +1,63 @@
+{{- define "common.deploymentkafka" -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deploymentName }}
+  labels:
+    app: {{ .Values.appLabel }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.appLabel }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.appLabel }}
+    spec:
+      containers:
+        - name: {{ .Values.appLabel }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.imagePullPolicy }}
+          ports:
+            - containerPort: {{ .Values.containerPort }}
+          {{- if .Values.environment_enabled }}
+          env:
+            # General Kafka configuration for KRaft mode
+            - name: KAFKA_PROCESS_ROLES
+              value: "controller,broker"
+            - name: KAFKA_NODE_ID
+              value: "1"
+            # Define listeners for client communication (internal) and the controller
+            - name: KAFKA_LISTENERS
+              value: PLAINTEXT://localhost:9092,CONTROLLER://localhost:9093
+            - name: KAFKA_LISTENER_SECURITY_PROTOCOL_MAP
+              value: PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT
+            # Tell the world how to connect to this broker
+            - name: KAFKA_ADVERTISED_LISTENERS
+              value: PLAINTEXT://kafka-service.default.svc.cluster.local:9092
+            # Configure the controller quorum
+            - name: KAFKA_CONTROLLER_QUORUM_VOTERS
+              value: "1@host.docker.internal:9093"
+            # Allow automatic topic creation
+            - name: KAFKA_AUTO_CREATE_TOPICS_ENABLE
+              value: "true"
+            # The directory for log and metadata storage
+            - name: KAFKA_LOG_DIRS
+              value: "/var/lib/kafka/data"
+            # Set a unique cluster ID (generate with `kafka-storage.sh random-uuid`)
+            - name: CLUSTER_ID
+              value: "4W4oQxWcSL-p_R6k7o5g-g"
+          {{- end }}
+          {{- if .Values.volumemounts_enabled }}
+          volumeMounts:
+            - name: kafka-storage-volume
+              mountPath: {{ .Values.volumeMounts.mountPath }} 
+          {{- end }}
+      {{- if .Values.volumes_enabled }}
+      volumes:
+        - name: kafka-storage-volume
+          persistentVolumeClaim:
+            claimName: {{ .Values.volumeClaimName }}
+      {{- end }}
+{{- end -}}

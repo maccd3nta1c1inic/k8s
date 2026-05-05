@@ -1,0 +1,38 @@
+deploymentName: cloud-gateway-app
+serviceLoadBalancerName: cloud-gateway-svc
+appLabel: cloud-gateway
+# dbHost: "host.docker.internal"
+# dbHost: "desktop-80hht36.local"
+dbHost: "docmaccdentalclinic.local"
+# networkHost: "192.168.1.2"
+# networkHost: "desktop-80hht36.local"
+networkHost: "docmaccdentalclinic.local"
+profileActive: "desktop-kub-prod"
+applicationName: "APIGatewayService"
+
+replicaCount: 1
+
+image:
+  repository: kenmac17/apigateway
+  tag: v1.0.0
+imagePullPolicy: Always
+
+containerPort: 9090
+
+service:
+  type: LoadBalancer
+  targetPort: 9090
+  loadBalancer:
+    port: 9090
+
+environment_enabled: true
+configserver_enabled: true
+eurekaserver_enabled: true
+dbhost_enabled: true
+dbport_enabled: false
+networkhost_enabled: true
+filedatalocation_enabled: false
+profile_enabled: true
+service_name_enabled: true
+volumemounts_enabled: false
+volumes_enabled: false

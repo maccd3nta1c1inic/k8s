@@ -1,0 +1,10 @@
+{{- define "common.configmap" -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.global.configMapName }}
+data:
+  CONFIG_SERVER_URL: {{ .Values.global.configServerURL }}
+  EUREKA_SERVICE_ADDRESS: {{ .Values.global.eurekaServerURL }}
+  ZIPKIN_URL: {{ .Values.global.zipkinServerURL }}
+{{- end -}}

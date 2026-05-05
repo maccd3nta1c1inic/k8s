@@ -1,0 +1,5 @@
+global:
+  configMapName: macc-dev-configmap
+  configServerURL: "http://config-server-svc/config-server"
+  eurekaServerURL: "http://eureka-0.eureka:8761/eureka"
+  zipkinServerURL: "http://zipkin-svc"

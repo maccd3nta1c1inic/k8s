@@ -1,0 +1,13 @@
+{{- define "common.serviceloadbalancer" -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.serviceLoadBalancerName }}
+spec:
+  selector:
+    app: {{ .Values.appLabel }}
+  type: {{ .Values.service.type }}    
+  ports:
+    - port: {{ .Values.service.loadBalancer.port }}
+      targetPort: {{ .Values.service.targetPort }}
+{{- end -}}

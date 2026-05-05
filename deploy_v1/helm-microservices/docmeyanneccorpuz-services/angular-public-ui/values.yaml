@@ -1,0 +1,22 @@
+deploymentName: angular-public-ui-app
+serviceLoadBalancerName: angular-public-ui-svc
+appLabel: angular-public-ui
+
+replicaCount: 1
+
+image:
+  repository: kenmac17/angular-ui-public
+  tag: v1.0.0
+imagePullPolicy: Always
+
+containerPort: 4201
+
+service:
+  type: LoadBalancer
+  targetPort: 4201
+  loadBalancer:
+    port: 4201
+
+environment_enabled: false
+volumemounts_enabled: false
+volumes_enabled: false

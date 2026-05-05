@@ -1,0 +1,32 @@
+deploymentName: treatment-plan-consumer-app
+serviceName: treatment-plan-consumer-svc
+appLabel: treatment-plan-consumer
+dbHost: "host.docker.internal"
+profileActive: "desktop-kub-prod"
+dbPort: 3307
+applicationName: "TreatmentPlanConsumerService"
+
+replicaCount: 1
+
+image:
+  repository: kenmac17/treatmentplanconsumer
+  tag: v1.0.0
+imagePullPolicy: Always
+
+containerPort: 8092
+
+service:
+  port: 80
+  targetPort: 8092
+
+environment_enabled: true
+configserver_enabled: true
+eurekaserver_enabled: true
+dbhost_enabled: true
+dbport_enabled: true
+networkhost_enabled: false
+filedatalocation_enabled: false
+profile_enabled: true
+service_name_enabled: true
+volumemounts_enabled: false
+volumes_enabled: false

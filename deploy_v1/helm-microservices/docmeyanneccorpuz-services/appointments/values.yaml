@@ -1,0 +1,32 @@
+deploymentName: appointment-app
+serviceName: appointment-svc
+appLabel: appointment
+dbHost: "host.docker.internal"
+dbPort: "3307"
+profileActive: "desktop-kub-prod"
+applicationName: "DentalAppointmentService"
+
+replicaCount: 1
+
+image:
+  repository: kenmac17/appointment
+  tag: v1.0.0
+imagePullPolicy: Always
+
+containerPort: 8004
+
+service:
+  port: 80
+  targetPort: 8004
+
+environment_enabled: true
+configserver_enabled: true
+eurekaserver_enabled: true
+dbhost_enabled: true
+dbport_enabled: true
+networkhost_enabled: false
+filedatalocation_enabled: false
+profile_enabled: true
+service_name_enabled: true
+volumemounts_enabled: false
+volumes_enabled: false

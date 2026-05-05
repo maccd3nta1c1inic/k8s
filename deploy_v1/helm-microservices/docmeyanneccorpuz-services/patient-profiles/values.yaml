@@ -1,0 +1,52 @@
+deploymentName: patient-profile-app
+serviceName: patient-profile-svc
+appLabel: patient-profile
+dbHost: "host.docker.internal"
+dbPort: 3307
+profileActive: "desktop-kub-prod"
+applicationName: "PatientProfileService"
+fileDataLocation: /storage/mount/path/data/PatientsProfile/images
+
+replicaCount: 1
+
+image:
+  repository: kenmac17/patientprofile
+  tag: v1.0.0
+imagePullPolicy: Always
+
+containerPort: 8009
+
+service:
+  port: 80
+  targetPort: 8009
+
+volumeMounts:
+  mountPath: /storage/mount/path/data
+
+volumeName: persistent-volume-profile
+typeLabel: local
+storageClassName: hostpath
+capacity:
+  storage: 40Gi
+accessModes: ReadWriteMany
+# Use Docker Desktop specific path formats for 2026
+# Windows example: /run/desktop/mnt/host/c/data
+# macOS example: /Users/yourname/data
+hostPath: /run/desktop/mnt/host/c/storageMACC
+reclaimPolicy: Retain
+
+volumeClaimName: persistent-volume-profile-claim
+requests:
+  storage: 40Gi
+
+environment_enabled: true
+configserver_enabled: true
+eurekaserver_enabled: true
+dbhost_enabled: true
+dbport_enabled: true
+networkhost_enabled: false
+filedatalocation_enabled: true
+profile_enabled: true
+service_name_enabled: true
+volumemounts_enabled: true
+volumes_enabled: true

@@ -1,0 +1,38 @@
+deploymentName: angular-ui-app
+serviceLoadBalancerName: angular-ui-svc
+appLabel: angular-ui
+
+replicaCount: 1
+
+image:
+  repository: kenmac17/angular-ui
+  tag: v1.0.0
+imagePullPolicy: Always
+
+containerPort: 443
+
+service:
+  type: LoadBalancer
+  targetPort: 443
+  loadBalancer:
+    port: 443
+
+# volumeMounts:
+#   mountPath: /usr/src/app
+
+# volumeName: persistent-volume-angular-ui
+# typeLabel: local
+# storageClassName: hostpath
+# capacity:
+#   storage: 1Gi
+# accessModes: ReadWriteMany
+# hostPath: /storageMACC/app/src/environments
+# reclaimPolicy: Retain
+
+# volumeClaimName: persistent-volume-angular-ui-claim
+# requests:
+#   storage: 1Gi
+
+environment_enabled: false
+volumemounts_enabled: true
+volumes_enabled: true

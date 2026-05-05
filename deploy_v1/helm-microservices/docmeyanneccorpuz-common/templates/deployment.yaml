@@ -1,0 +1,76 @@
+{{- define "common.deployment" -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deploymentName }}
+  labels:
+    app: {{ .Values.appLabel }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.appLabel }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.appLabel }}
+    spec:
+      containers:
+        - name: {{ .Values.appLabel }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.imagePullPolicy }}
+          ports:
+            - containerPort: {{ .Values.containerPort }}
+          {{- if .Values.environment_enabled }}
+          env:
+            {{- if .Values.configserver_enabled }}
+            - name: CONFIG_SERVER_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.global.configMapName }}
+                  key: CONFIG_SERVER_URL
+            {{- end }}
+            {{- if .Values.eurekaserver_enabled }}
+            - name: EUREKA_SERVER_ADDRESS
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.global.configMapName }}
+                  key: EUREKA_SERVICE_ADDRESS
+            {{- end }}
+            {{- if .Values.dbhost_enabled }}
+            - name: DB_HOST
+              value: {{ .Values.dbHost }}
+            {{- end }}
+            {{- if .Values.dbport_enabled }}
+            - name: DB_PORT
+              value: {{ .Values.dbPort | quote }}
+            {{- end }}
+            {{- if .Values.networkhost_enabled }}
+            - name: NETWORK_HOST
+              value: {{ .Values.networkHost }}
+            {{- end }}
+            {{- if .Values.filedatalocation_enabled }}
+            - name: FILE_DATA
+              value: {{ .Values.fileDataLocation }}
+            {{- end }}
+            {{- if .Values.profile_enabled }}
+            - name: ACTIVE_PROFILE
+              value: {{ .Values.profileActive }}
+            {{- end }}
+            {{- if .Values.service_name_enabled }}
+            - name: SERVICE_NAME
+              value: {{ .Values.applicationName }}
+            {{- end }}
+          {{- end }}
+          {{- if .Values.volumemounts_enabled }}
+          volumeMounts:
+            - name: storage-volume
+              mountPath: {{ .Values.volumeMounts.mountPath }} 
+          {{- end }}
+      {{- if .Values.volumes_enabled }}
+      volumes:
+        - name: storage-volume
+          persistentVolumeClaim:
+            claimName: {{ .Values.volumeClaimName }}
+      {{- end }}
+{{- end -}}

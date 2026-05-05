@@ -1,0 +1,30 @@
+deploymentName: config-server-app
+serviceName: config-server-svc
+appLabel: config-server
+profileActive: "desktop-kub-prod"
+applicationName: "ConfigServerService"
+
+replicaCount: 1
+
+image:
+  repository: kenmac17/configserver
+  tag: v1.0.0
+imagePullPolicy: Always
+
+containerPort: 9296
+
+service:
+  port: 80
+  targetPort: 9296
+
+environment_enabled: true
+configserver_enabled: false
+eurekaserver_enabled: true
+dbhost_enabled: false
+dbport_enabled: false
+networkhost_enabled: false
+filedatalocation_enabled: false
+profile_enabled: true
+service_name_enabled: true
+volumemounts_enabled: false
+volumes_enabled: false

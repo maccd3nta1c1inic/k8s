@@ -1,0 +1,19 @@
+statefulsetName: eureka
+serviceName: eureka-lb
+serviceNameNCI: eureka
+appLabel: eureka
+statefulsetServiceName: "eureka"
+
+replicaCount: 1
+
+image:
+  repository: kenmac17/serviceregistry
+  tag: v1.0.0
+imagePullPolicy: Always
+
+containerPort: 8761
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 8761

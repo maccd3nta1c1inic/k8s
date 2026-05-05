@@ -1,0 +1,17 @@
+{{- define "common.persistentvolume" -}}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ .Values.volumeName }}
+  labels:
+    type: {{ .Values.typeLabel }}
+spec:
+  storageClassName: {{ .Values.storageClassName }}
+  capacity:
+    storage: {{ .Values.capacity.storage }}
+  accessModes:
+    - {{ .Values.accessModes }}
+  hostPath:
+    path: {{ .Values.hostPath }}
+  persistentVolumeReclaimPolicy: {{ .Values.reclaimPolicy }}
+{{- end -}}

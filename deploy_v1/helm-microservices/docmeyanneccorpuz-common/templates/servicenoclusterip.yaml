@@ -1,0 +1,14 @@
+{{- define "common.servicenoclusterip" -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.serviceNameNCI }}
+spec:
+  clusterIP: None
+  selector:
+    app: {{ .Values.appLabel }}
+  ports:
+    - name: eureka
+      port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}
+{{- end -}}

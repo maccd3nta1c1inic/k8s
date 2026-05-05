@@ -1,0 +1,24 @@
+deploymentName: zipkin-app
+serviceName: zipkin-svc
+serviceLoadBalancerName: zipkin-svc-lb
+appLabel: zipkin-app
+
+replicaCount: 1
+
+image:
+  repository: openzipkin/zipkin
+  tag: latest
+imagePullPolicy: Always
+
+containerPort: 9411
+
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 9411
+  loadBalancer:
+    port: 9411
+
+environment_enabled: false
+volumemounts_enabled: false
+volumes_enabled: false

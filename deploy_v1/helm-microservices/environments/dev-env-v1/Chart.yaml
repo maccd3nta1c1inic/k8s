@@ -1,0 +1,121 @@
+apiVersion: v2
+name: dev-env
+description: Developer Environment
+
+# A chart can be either an 'application' or a 'library' chart.
+#
+# Application charts are a collection of templates that can be packaged into versioned archives
+# to be deployed.
+#
+# Library charts provide useful utilities or functions for the chart developer. They're included as
+# a dependency of application charts to inject those utilities and functions into the rendering
+# pipeline. Library charts do not define any templates and therefore cannot be deployed.
+type: application
+
+# This is the chart version. This version number should be incremented each time you make changes
+# to the chart and its templates, including the app version.
+# Versions are expected to follow Semantic Versioning (https://semver.org/)
+version: 0.1.0
+
+# This is the version number of the application being deployed. This version number should be
+# incremented each time you make changes to the application. Versions are not expected to
+# follow Semantic Versioning. They should reflect the version the application is using.
+# It is recommended to use it with quotes.
+appVersion: "1.0.0"
+
+dependencies:
+  - name: docmeyanneccorpuz-common
+    version: 0.1.0
+    repository: file://../../docmeyanneccorpuz-common
+
+  - name: angular-ui
+    version: 0.1.0
+    repository: file://../../docmeyanneccorpuz-services/angular-ui
+
+  - name: angular-public-ui
+    version: 0.1.0
+    repository: file://../../docmeyanneccorpuz-services/angular-public-ui
+
+  - name: zipkin
+    version: 0.1.0
+    repository: file://../../docmeyanneccorpuz-services/zipkin
+
+  - name: ingress
+    version: 0.1.0
+    repository: file://../../docmeyanneccorpuz-services/ingress
+
+  - name: eureka-server
+    version: 0.1.0
+    repository: file://../../docmeyanneccorpuz-services/eureka-server
+
+  - name: config-server
+    version: 0.1.0
+    repository: file://../../docmeyanneccorpuz-services/config-server
+
+  - name: appointments
+    version: 0.1.0
+    repository: file://../../docmeyanneccorpuz-services/appointments
+
+  - name: dental-certificates
+    version: 0.1.0
+    repository: file://../../docmeyanneccorpuz-services/dental-certificates
+
+  - name: intraoral-bills
+    version: 0.1.0
+    repository: file://../../docmeyanneccorpuz-services/intraoral-bills
+
+  - name: intraoral-examinations
+    version: 0.1.0
+    repository: file://../../docmeyanneccorpuz-services/intraoral-examinations
+
+  - name: intraoral-examination-consumers
+    version: 0.1.0
+    repository: file://../../docmeyanneccorpuz-services/intraoral-examination-consumers
+
+  - name: medical-history
+    version: 0.1.0
+    repository: file://../../docmeyanneccorpuz-services/medical-history
+
+  - name: orthodontic-bills
+    version: 0.1.0
+    repository: file://../../docmeyanneccorpuz-services/orthodontic-bills
+
+  - name: orthodontic-examinations
+    version: 0.1.0
+    repository: file://../../docmeyanneccorpuz-services/orthodontic-examinations
+
+  - name: patient-profiles
+    version: 0.1.0
+    repository: file://../../docmeyanneccorpuz-services/patient-profiles
+
+  - name: pdf-exporters
+    version: 0.1.0
+    repository: file://../../docmeyanneccorpuz-services/pdf-exporters
+
+  - name: physicians-history
+    version: 0.1.0
+    repository: file://../../docmeyanneccorpuz-services/physicians-history
+
+  - name: preprocedures
+    version: 0.1.0
+    repository: file://../../docmeyanneccorpuz-services/preprocedures
+
+  - name: prerequisites
+    version: 0.1.0
+    repository: file://../../docmeyanneccorpuz-services/prerequisites
+
+  - name: treatment-plan
+    version: 0.1.0
+    repository: file://../../docmeyanneccorpuz-services/treatment-plan
+
+  - name: treatment-plan-consumers
+    version: 0.1.0
+    repository: file://../../docmeyanneccorpuz-services/treatment-plan-consumers
+
+  - name: treatment-prescription
+    version: 0.1.0
+    repository: file://../../docmeyanneccorpuz-services/treatment-prescription
+
+  - name: cloud-gateway
+    version: 0.1.0
+    repository: file://../../docmeyanneccorpuz-services/cloud-gateway

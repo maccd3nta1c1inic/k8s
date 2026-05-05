@@ -1,0 +1,16 @@
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations:
+    # Important: If your Angular app inside the pod is still running HTTP,
+    # the Ingress will handle the HTTPS and talk to Angular via HTTP.
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+  hosts:
+    - host: docmaccdentalclinic.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls:
+    - secretName: angular-tls-secret
+      hosts:
+        - docmaccdentalclinic.local
