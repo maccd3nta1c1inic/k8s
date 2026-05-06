@@ -9,13 +9,13 @@ image:
   tag: 0.0.1
 imagePullPolicy: Always
 
-containerPort: 443
+containerPort: 4200
 
 service:
   type: LoadBalancer
-  targetPort: 443
+  targetPort: 4200
   loadBalancer:
-    port: 443
+    port: 4200
 
 # volumeMounts:
 #   mountPath: /usr/src/app
