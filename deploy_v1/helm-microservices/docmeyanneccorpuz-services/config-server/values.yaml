@@ -7,8 +7,8 @@ applicationName: "ConfigServerService"
 replicaCount: 1
 
 image:
-  repository: kenmac17/configserver
-  tag: v1.0.0
+  repository: docmacc/configserver
+  tag: 0.0.1
 imagePullPolicy: Always
 
 containerPort: 9296

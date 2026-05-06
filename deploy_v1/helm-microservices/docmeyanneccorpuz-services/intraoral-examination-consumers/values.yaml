@@ -9,8 +9,8 @@ applicationName: "IntraOralExaminationConsumerService"
 replicaCount: 1
 
 image:
-  repository: kenmac17/intraoralexaminationconsumer
-  tag: v1.0.0
+  repository: docmacc/intraoralexaminationconsumer
+  tag: 0.0.1
 imagePullPolicy: Always
 
 containerPort: 8091

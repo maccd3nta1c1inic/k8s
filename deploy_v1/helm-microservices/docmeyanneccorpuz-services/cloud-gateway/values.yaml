@@ -14,8 +14,8 @@ applicationName: "APIGatewayService"
 replicaCount: 1
 
 image:
-  repository: kenmac17/apigateway
-  tag: v1.0.0
+  repository: docmacc/apigateway
+  tag: 0.0.1
 imagePullPolicy: Always
 
 containerPort: 9090

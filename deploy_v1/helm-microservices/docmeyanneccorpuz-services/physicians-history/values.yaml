@@ -9,8 +9,8 @@ applicationName: "PhysiciansHistoryService"
 replicaCount: 1
 
 image:
-  repository: kenmac17/physicians
-  tag: v1.0.0
+  repository: docmacc/physicians
+  tag: 0.0.1
 imagePullPolicy: Always
 
 containerPort: 8084

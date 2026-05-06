@@ -9,8 +9,8 @@ applicationName: "OrthodonticExaminationService"
 replicaCount: 1
 
 image:
-  repository: kenmac17/orthodonticexamination
-  tag: v1.0.0
+  repository: docmacc/orthodonticexamination
+  tag: 0.0.1
 imagePullPolicy: Always
 
 containerPort: 8087

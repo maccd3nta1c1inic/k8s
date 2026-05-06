@@ -9,8 +9,8 @@ applicationName: "MedicalHistoryService"
 replicaCount: 1
 
 image:
-  repository: kenmac17/medicalhistory
-  tag: v1.0.0
+  repository: docmacc/medicalhistory
+  tag: 0.0.1
 imagePullPolicy: Always
 
 containerPort: 8008

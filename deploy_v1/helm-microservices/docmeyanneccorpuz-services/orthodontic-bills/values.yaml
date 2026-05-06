@@ -9,8 +9,8 @@ applicationName: "OrthodonticBillService"
 replicaCount: 1
 
 image:
-  repository: kenmac17/orthodonticbill
-  tag: v1.0.0
+  repository: docmacc/orthodonticbill
+  tag: 0.0.1
 imagePullPolicy: Always
 
 containerPort: 8082

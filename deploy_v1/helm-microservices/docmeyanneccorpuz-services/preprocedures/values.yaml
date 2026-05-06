@@ -11,8 +11,8 @@ fileDataLocation: /storage/mount/path/data/PreProcedure
 replicaCount: 1
 
 image:
-  repository: kenmac17/preprocedure
-  tag: v1.0.0
+  repository: docmacc/preprocedure
+  tag: 0.0.1
 imagePullPolicy: Always
 
 containerPort: 8006

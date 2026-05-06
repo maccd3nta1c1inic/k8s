@@ -10,8 +10,8 @@ fileDataLocation: /storage/mount/path/data/PatientsProfile/images
 replicaCount: 1
 
 image:
-  repository: kenmac17/patientprofile
-  tag: v1.0.0
+  repository: docmacc/patientprofile
+  tag: 0.0.1
 imagePullPolicy: Always
 
 containerPort: 8009

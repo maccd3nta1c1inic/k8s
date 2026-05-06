@@ -11,8 +11,8 @@ fileDataLocation: /storage/mount/path/data/Prerequisite
 replicaCount: 1
 
 image:
-  repository: kenmac17/prerequisite
-  tag: v1.0.0
+  repository: docmacc/prerequisite
+  tag: 0.0.1
 imagePullPolicy: Always
 
 containerPort: 8086

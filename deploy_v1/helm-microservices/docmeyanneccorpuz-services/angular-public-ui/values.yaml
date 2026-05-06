@@ -5,8 +5,8 @@ appLabel: angular-public-ui
 replicaCount: 1
 
 image:
-  repository: kenmac17/angular-ui-public
-  tag: v1.0.0
+  repository: docmacc/angular-ui-public
+  tag: 0.0.1
 imagePullPolicy: Always
 
 containerPort: 4201

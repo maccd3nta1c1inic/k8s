@@ -9,8 +9,8 @@ fileDataLocation: /storage/mount/path/data
 replicaCount: 1
 
 image:
-  repository: kenmac17/pdfexporter
-  tag: v1.0.0
+  repository: docmacc/pdfexporter
+  tag: 0.0.1
 imagePullPolicy: Always
 
 containerPort: 8007

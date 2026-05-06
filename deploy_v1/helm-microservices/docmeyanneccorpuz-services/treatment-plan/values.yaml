@@ -9,8 +9,8 @@ applicationName: "TreatmentPlanService"
 replicaCount: 1
 
 image:
-  repository: kenmac17/treatmentplan
-  tag: v1.0.0
+  repository: docmacc/treatmentplan
+  tag: 0.0.1
 imagePullPolicy: Always
 
 containerPort: 8088

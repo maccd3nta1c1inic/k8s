@@ -9,8 +9,8 @@ applicationName: "TreatmentPrescriptionService"
 replicaCount: 1
 
 image:
-  repository: kenmac17/treatmentprescription
-  tag: v1.0.0
+  repository: docmacc/treatmentprescription
+  tag: 0.0.1
 imagePullPolicy: Always
 
 containerPort: 8083
