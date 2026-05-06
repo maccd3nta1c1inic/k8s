@@ -3,7 +3,7 @@ serviceName: preprocedures-svc
 appLabel: preprocedures
 dbHost: "host.docker.internal"
 dbPort: 3307
-networkHost: "192.168.0.106"
+networkHost: "192.168.0.127"
 profileActive: "macc-prod"
 applicationName: "PreProcedureService"
 fileDataLocation: /storage/mount/path/data/PreProcedure
