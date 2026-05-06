@@ -32,7 +32,7 @@ accessModes: ReadWriteMany
 # Use Docker Desktop specific path formats for 2026
 # Windows example: /run/desktop/mnt/host/c/data
 # macOS example: /Users/yourname/data
-hostPath: /run/desktop/mnt/host/c/Users/Admin/MACCDentalClinicSystem/storage/assets
+hostPath: /run/desktop/mnt/host/c/users/admin/mACCDentalClinicSystem/storage/assets
 reclaimPolicy: Retain
 
 volumeClaimName: persistent-volume-profile-claim
